@@ -1,0 +1,25 @@
+2024-11-23T16:46:38+00:00 INFO ENVIRONMENT: array (
+  'WP_User' => 'Guest (non logged-in user)',
+  'HTTP_REFERER' => '--',
+  'HTTP_USER_AGENT' => 'WordPress/6.6.2; http://localhost/woocommerce',
+  'REQUEST_URI' => '/woocommerce/wp-cron.php?doing_wp_cron=1732380390.6611430644989013671875',
+  'DOING_AJAX' => false,
+  'DOING_CRON' => true,
+  'WP_CLI' => false,
+)
+2024-11-23T16:46:38+00:00 INFO REQUEST GET https://public-api.wordpress.com/wpcom/v2/wcpay/woopay/compatibility?test_mode=1
+2024-11-23T16:46:38+00:00 INFO HEADERS: array (
+  'Content-Type' => 'application/json; charset=utf-8',
+  'User-Agent' => 'WooCommerce Payments/8.2.1',
+)
+2024-11-23T16:46:38+00:00 INFO HTTP_REQUEST_ERROR Site is not connected to WordPress.com
+2024-11-23T16:46:38+00:00 INFO Failed to decode WooPay incompatible extensions list. WCPay\Exceptions\API_Exception: Site is not connected to WordPress.com in C:\xampp\htdocs\woocommerce\wp-content\plugins\woocommerce-payments\includes\wc-payment-api\class-wc-payments-http.php:61
+Stack trace:
+#0 C:\xampp\htdocs\woocommerce\wp-content\plugins\woocommerce-payments\includes\wc-payment-api\class-wc-payments-api-client.php(2141): WC_Payments_Http->remote_request(Array, NULL, false, false)
+#1 C:\xampp\htdocs\woocommerce\wp-content\plugins\woocommerce-payments\includes\wc-payment-api\class-wc-payments-api-client.php(2805): WC_Payments_API_Client->request(Array, 'woopay/compatib...', 'GET', false)
+#2 C:\xampp\htdocs\woocommerce\wp-content\plugins\woocommerce-payments\includes\woopay\class-woopay-scheduler.php(85): WC_Payments_API_Client->get_woopay_compatibility()
+#3 C:\xampp\htdocs\woocommerce\wp-includes\class-wp-hook.php(324): WCPay\WooPay\WooPay_Scheduler->update_compatibility_and_maybe_show_incompatibility_warning()
+#4 C:\xampp\htdocs\woocommerce\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\woocommerce\wp-includes\plugin.php(565): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\woocommerce\wp-cron.php(191): do_action_ref_array('validate_woopay...', Array)
+#7 {main}
